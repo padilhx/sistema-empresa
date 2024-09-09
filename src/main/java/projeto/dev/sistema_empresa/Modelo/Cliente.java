@@ -3,9 +3,9 @@ package projeto.dev.sistema_empresa.Modelo;
 public class Cliente {
     private Long id;
     private String cpf;
-    private String nome; // Adicione o campo 'nome'
+    private String nome; 
 
-    // Construtores
+    
     public Cliente() {
     }
 
@@ -15,7 +15,7 @@ public class Cliente {
         this.nome = nome;
     }
 
-    // Getters e setters
+  
     public Long getId() {
         return id;
     }
@@ -32,11 +32,11 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    public String getNome() { // Adicione o método getNome
+    public String getNome() { 
         return nome;
     }
 
-    public void setNome(String nome) { // Adicione o método setNome
+    public void setNome(String nome) { 
         this.nome = nome;
     }
 }

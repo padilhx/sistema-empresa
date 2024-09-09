@@ -35,16 +35,16 @@ public class TransacaoService {
         Cliente cliente = clienteRepository.findById(clienteId).orElseThrow();
         Empresa empresa = empresaRepository.findById(empresaId).orElseThrow();
     
-        // Atualiza o saldo da empresa baseado no tipo de transação
+       
         if (tipo == TipoTransacao.DEPOSITO) {
             empresa.setSaldo(empresa.getSaldo().add(valor));
         } else if (tipo == TipoTransacao.SAQUE) {
             empresa.setSaldo(empresa.getSaldo().subtract(valor));
         }
     
-        // Salva a transação e atualiza a empresa com o saldo modificado
+       
         transacaoRepository.save(new Transacao(clienteId, empresaId, valor, LocalDateTime.now()));
-        empresaRepository.save(empresa); // Salva a empresa com o saldo atualizado
+        empresaRepository.save(empresa); 
 
         enviarCallbackParaEmpresa(empresaId, new Transacao(clienteId, empresaId, valor, LocalDateTime.now()));
     }

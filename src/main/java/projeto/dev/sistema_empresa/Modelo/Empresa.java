@@ -17,7 +17,7 @@ public class Empresa {
     private BigDecimal saldo;
     private BigDecimal taxaSistema;
 
-    // Getters e Setters
+ 
 
     public Long getId() {
         return id;

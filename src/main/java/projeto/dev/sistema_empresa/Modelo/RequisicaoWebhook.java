@@ -9,7 +9,7 @@ public class RequisicaoWebhook {
     private BigDecimal saldo;
     private BigDecimal taxaSistema;
 
-    // Construtor com parâmetros
+   
     public RequisicaoWebhook(Long id, String nome, String cnpj, BigDecimal saldo, BigDecimal taxaSistema) {
         this.id = id;
         this.nome = nome;
@@ -18,7 +18,7 @@ public class RequisicaoWebhook {
         this.taxaSistema = taxaSistema;
     }
 
-    // Getters e Setters
+    
     public Long getId() {
         return id;
     }

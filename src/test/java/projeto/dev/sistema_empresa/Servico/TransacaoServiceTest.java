@@ -49,11 +49,11 @@ public class TransacaoServiceTest {
 
     @Test
     public void testarRealizarTransacao_SucessoComDeposito() {
-        // Configurações
+
         Cliente cliente = new Cliente();
         cliente.setId(1L);
         cliente.setCpf("123.456.789-00");
-        cliente.setNome("Cliente Teste"); // Adicione o nome do cliente se disponível
+        cliente.setNome("Cliente Teste");
 
         Empresa empresa = new Empresa();
         empresa.setId(1L);
@@ -72,13 +72,13 @@ public class TransacaoServiceTest {
         when(empresaRepository.findById(1L)).thenReturn(Optional.of(empresa));
         when(transacaoRepository.save(any(Transacao.class))).thenReturn(transacao);
 
-        // Simula a chamada ao RestTemplate
+       
         when(restTemplate.postForObject(anyString(), any(), eq(String.class))).thenReturn("Success");
 
-        // Chama o método a ser testado
+     
         transacaoService.realizarTransacao(1L, 1L, BigDecimal.valueOf(100), TipoTransacao.DEPOSITO);
 
-        // Captura o argumento passado para postForObject
+        
         ArgumentCaptor<RequisicaoWebhook> requisicaoCaptor = ArgumentCaptor.forClass(RequisicaoWebhook.class);
         verify(restTemplate).postForObject(
             eq("https://webhook.site/18b055c5-ef0b-4f3b-b140-e6f8d0944c21"),

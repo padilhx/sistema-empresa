@@ -18,11 +18,11 @@ public class Transacao {
     private BigDecimal valor;
     private LocalDateTime dataHora;
 
-    // Construtor padrão
+   
     public Transacao() {
     }
 
-    // Construtor com parâmetros
+   
     public Transacao(Long clienteId, Long empresaId, BigDecimal valor, LocalDateTime dataHora) {
         this.clienteId = clienteId;
         this.empresaId = empresaId;
@@ -30,7 +30,7 @@ public class Transacao {
         this.dataHora = dataHora;
     }
 
-    // Getters e Setters
+  
     public Long getId() {
         return id;
     }

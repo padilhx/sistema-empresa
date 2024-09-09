@@ -22,7 +22,6 @@ public class NotificationService {
     }
 
     public void enviarNotificacao(Long clienteId, Transacao transacao) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'enviarNotificacao'");
     }
 }
